@@ -2,7 +2,7 @@ import subprocess
 import os
 from ..common import configuration
 
-def loadRepo(repo: str, branch: str) -> bool:
+def loadRepo(repo: str, branch: str) -> str:
     result = True
     repoParentPath = configuration.getRepoFolder()
     repoName = os.path.splitext(os.path.basename(repo))[0]
@@ -13,7 +13,8 @@ def loadRepo(repo: str, branch: str) -> bool:
         result = cloneRepo(repoParentPath, repo, branch)
     if not result:
         print("loadRepo failed")
-    return result
+        return ""
+    return repoPath
 
 def cloneRepo(repoParentPath: str, repo: str, defaultBranch: str) -> bool:
     if not os.path.exists(repoParentPath):
