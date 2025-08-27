@@ -26,14 +26,20 @@ def makeHttpRequest(apiUrl: str, method: str, headers: dict = {}, payload: dict 
             pass
         return {
             "code" : resp.status,
-            "status" : "Failure",
+            "status" : "Success",
             "response" : apiResponse
         }
     except Exception as e:
+        code = getattr(resp, "status", None)
         return {
-            "code" : resp.status,
+            "code" : code,
             "status" : "Failure",
             "response" : None
         }
     finally:
-        conn.close()
+        try:
+            if conn:
+                conn.close()
+        except Exception:
+            # best-effort close; swallow exceptions
+            pass

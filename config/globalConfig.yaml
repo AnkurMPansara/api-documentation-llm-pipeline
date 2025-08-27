@@ -1,1 +1,5 @@
 repo_location: "data/repositories"
+
+llm_chat_completion_api_url: "https://api.mistral.ai/v1/chat/completions"
+llm_chat_completion_api_key: "SuLDKwRsVTdShyNqkaTZJ4okiTTsZZin"
+llm_model: "mistral-small-latest"
