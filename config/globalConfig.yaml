@@ -2,5 +2,5 @@ repo_location: "data/repositories"
 repo_index_location: "data/repositoryIndexes"
 
 llm_chat_completion_api_url: "https://api.groq.com/openai/v1/chat/completions"
-llm_chat_completion_api_key: ""
+llm_chat_completion_api_key: "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"
 llm_model: "llama-3.1-8b-instant"
